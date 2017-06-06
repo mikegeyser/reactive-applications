@@ -1,0 +1,368 @@
+    .diagram {
+      margin: 75px auto;
+      width: 80%
+    }
+
+    .diagram .stream {
+      position: relative;
+      height: 42px;
+      overflow: hidden
+    }
+
+    .diagram .stream * {
+      position: absolute
+    }
+
+    .diagram .stream .stream-arrow {
+      height: 2px;
+      background-color: #222;
+      top: 20px;
+      width: 100%
+    }
+
+    .diagram .stream .diagram-stream-item {
+      width: 14px;
+      height: 14px;
+      border-radius: 14px;
+      top: 14px;
+      margin-left: -7px
+    }
+
+    .diagram .stream .diagram-stream-blip {
+      width: 14px;
+      height: 14px;
+      border-radius: 14px;
+      top: 21px;
+      opacity: 0
+    }
+
+    .diagram .stream .stream-end {
+      background-color: #222;
+      top: 14px;
+      width: 2px;
+      height: 14px;
+      left: 96%
+    }
+
+    .diagram .stream .stream-arrow-head1 {
+      background-color: #222;
+      top: 12.04px;
+      width: 2px;
+      height: 14px;
+      left: 99%;
+      transform: rotate(-0.2turn)
+    }
+
+    .diagram .stream .stream-arrow-head2 {
+      background-color: #222;
+      top: 16.1px;
+      width: 2px;
+      height: 14px;
+      left: 99%;
+      transform: rotate(.2turn)
+    }
+
+    .diagram .stream .diagram-scheduler {
+      width: 28px;
+      height: 4px;
+      top: 19px;
+      margin-left: -28px;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0), #EC0C8E) repeat scroll 0 0 transparent;
+      -webkit-animation: scheduler 1000ms linear 0ms;
+      -moz-animation: scheduler 1000ms linear 0ms;
+      -o-animation: scheduler 1000ms linear 0ms;
+      animation: scheduler 1000ms linear 0ms
+    }
+
+    .diagram .input-stream-item1 {
+      background-color: #592D89;
+      left: 15%
+    }
+
+    .diagram .input-stream-item2 {
+      background-color: #3c71c4;
+      left: 47%
+    }
+
+    .diagram .input-stream-item3 {
+      background-color: #20993c;
+      left: 55%
+    }
+
+    .diagram .input-stream-item4 {
+      background-color: #26de5a;
+      left: 60%
+    }
+
+    .diagram .input-stream-blip1 {
+      background-color: #592D89;
+      left: 15%;
+      -webkit-animation: blip 600ms ease-out 150ms;
+      -moz-animation: blip 600ms ease-out 150ms;
+      -o-animation: blip 600ms ease-out 150ms;
+      animation: blip 600ms ease-out 150ms
+    }
+
+    .diagram .input-stream-blip2 {
+      background-color: #3c71c4;
+      left: 47%;
+      -webkit-animation: blip 600ms ease-out 470ms;
+      -moz-animation: blip 600ms ease-out 470ms;
+      -o-animation: blip 600ms ease-out 470ms;
+      animation: blip 600ms ease-out 470ms
+    }
+
+    .diagram .input-stream-blip3 {
+      background-color: #20993c;
+      left: 55%;
+      -webkit-animation: blip 600ms ease-out 550ms;
+      -moz-animation: blip 600ms ease-out 550ms;
+      -o-animation: blip 600ms ease-out 550ms;
+      animation: blip 600ms ease-out 550ms
+    }
+
+    .diagram .input-stream-blip4 {
+      background-color: #26de5a;
+      left: 60%;
+      -webkit-animation: blip 600ms ease-out 600ms;
+      -moz-animation: blip 600ms ease-out 600ms;
+      -o-animation: blip 600ms ease-out 600ms;
+      animation: blip 600ms ease-out 600ms
+    }
+
+    .diagram .input-mapper1 {
+      left: 15%
+    }
+
+    .diagram .input-mapper2 {
+      left: 47%
+    }
+
+    .diagram .input-mapper3 {
+      left: 55%
+    }
+
+    .diagram .input-mapper4 {
+      left: 60%
+    }
+
+    .diagram .output-mapper1 {
+      left: 35%
+    }
+
+    .diagram .output-mapper4 {
+      left: 80%
+    }
+
+    .diagram .output-stream-item1 {
+      background-color: #592D89;
+      left: 35%
+    }
+
+    .diagram .output-stream-item4 {
+      background-color: #26de5a;
+      left: 80%
+    }
+
+    .diagram .output-stream-blip1 {
+      background-color: #592D89;
+      left: 35%;
+      -webkit-animation: blip 600ms ease-out 350ms;
+      -moz-animation: blip 600ms ease-out 350ms;
+      -o-animation: blip 600ms ease-out 350ms;
+      animation: blip 600ms ease-out 350ms
+    }
+
+    .diagram .output-stream-blip4 {
+      background-color: #26de5a;
+      left: 80%;
+      -webkit-animation: blip 600ms ease-out 800ms;
+      -moz-animation: blip 600ms ease-out 800ms;
+      -o-animation: blip 600ms ease-out 800ms;
+      animation: blip 600ms ease-out 800ms
+    }
+
+    .diagram .operator {
+      height: 42px;
+      width: 100%;
+      text-align: center;
+      font-family: "Signika", Helvetica, sans-serif;
+      font-size: 1.4rem;
+      border: 1px solid #777;
+      line-height: 42px;
+      margin-top: 35px;
+      margin-bottom: 35px;
+      position: relative;
+      overflow: visible
+    }
+
+    .diagram .operator * {
+      position: absolute
+    }
+
+    .diagram .operator .input-stream-mapper {
+      width: 1px;
+      height: 49px;
+      border-left: 1px dashed #777;
+      top: -49px;
+      margin-left: -0.5px
+    }
+
+    .diagram .operator .input-stream-mapper-head1 {
+      width: 14px;
+      height: 1px;
+      top: 0;
+      margin-top: -8px;
+      margin-left: -4.5px;
+      background-color: #777;
+      transform: rotate(-0.2turn)
+    }
+
+    .diagram .operator .input-stream-mapper-head2 {
+      width: 14px;
+      height: 1px;
+      top: 0;
+      margin-top: -8px;
+      margin-left: -9.5px;
+      background-color: #777;
+      transform: rotate(.2turn)
+    }
+
+    .diagram .operator .output-stream-mapper {
+      width: 1px;
+      height: 49px;
+      border-left: 1px dashed #777;
+      top: 42px
+    }
+
+    .diagram .operator .output-stream-mapper-head1 {
+      width: 14px;
+      height: 1px;
+      top: 91px;
+      margin-top: -8px;
+      margin-left: -4.5px;
+      background-color: #777;
+      transform: rotate(-0.2turn)
+    }
+
+    .diagram .operator .output-stream-mapper-head2 {
+      width: 14px;
+      height: 1px;
+      top: 91px;
+      margin-top: -8px;
+      margin-left: -9.5px;
+      background-color: #777;
+      transform: rotate(.2turn)
+    }
+
+    @keyframes scheduler {
+      from {
+        left: 0
+      }
+      to {
+        left: 100%
+      }
+    }
+
+    @-o-keyframes scheduler {
+      from {
+        left: 0
+      }
+      to {
+        left: 100%
+      }
+    }
+
+    @-moz-keyframes scheduler {
+      from {
+        left: 0
+      }
+      to {
+        left: 100%
+      }
+    }
+
+    @-webkit-keyframes scheduler {
+      from {
+        left: 0
+      }
+      to {
+        left: 100%
+      }
+    }
+
+    @keyframes blip {
+      from {
+        width: 14px;
+        height: 14px;
+        border-radius: 14px;
+        margin-top: -7px;
+        margin-left: -7px;
+        opacity: 1
+      }
+      to {
+        width: 42px;
+        height: 42px;
+        border-radius: 42px;
+        margin-top: -21px;
+        margin-left: -21px;
+        opacity: 0
+      }
+    }
+
+    @-o-keyframes blip {
+      from {
+        width: 14px;
+        height: 14px;
+        border-radius: 14px;
+        margin-top: -7px;
+        margin-left: -7px;
+        opacity: 1
+      }
+      to {
+        width: 42px;
+        height: 42px;
+        border-radius: 42px;
+        margin-top: -21px;
+        margin-left: -21px;
+        opacity: 0
+      }
+    }
+
+    @-moz-keyframes blip {
+      from {
+        width: 14px;
+        height: 14px;
+        border-radius: 14px;
+        margin-top: -7px;
+        margin-left: -7px;
+        opacity: 1
+      }
+      to {
+        width: 42px;
+        height: 42px;
+        border-radius: 42px;
+        margin-top: -21px;
+        margin-left: -21px;
+        opacity: 0
+      }
+    }
+
+    @-webkit-keyframes blip {
+      from {
+        width: 14px;
+        height: 14px;
+        border-radius: 14px;
+        margin-top: -7px;
+        margin-left: -7px;
+        opacity: 1
+      }
+      to {
+        width: 42px;
+        height: 42px;
+        border-radius: 42px;
+        margin-top: -21px;
+        margin-left: -21px;
+        opacity: 0
+      }
+    }

@@ -1,0 +1,77 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="marble.css">
+</head>
+
+<body>
+  <div class="diagram">
+    <div class="stream">
+      <div class="stream-arrow"></div>
+      <div class="diagram-stream-item input-stream-item1"></div>
+      <div class="diagram-stream-blip input-stream-blip1 js-input-blip1"></div>
+      <div class="diagram-stream-item input-stream-item2"></div>
+      <div class="diagram-stream-blip input-stream-blip2 js-input-blip2"></div>
+      <div class="diagram-stream-item input-stream-item3"></div>
+      <div class="diagram-stream-blip input-stream-blip3 js-input-blip3"></div>
+      <div class="diagram-stream-item input-stream-item4"></div>
+      <div class="diagram-stream-blip input-stream-blip4 js-input-blip4"></div>
+      <div class="diagram-scheduler js-input-scheduler"></div>
+      <div class="stream-arrow-head1"></div>
+      <div class="stream-arrow-head2"></div>
+      <div class="stream-end"></div>
+    </div>
+    <div class="operator">debounce
+      <div class="input-stream-mapper input-mapper1"></div>
+      <div class="input-stream-mapper-head1 input-mapper1"></div>
+      <div class="input-stream-mapper-head2 input-mapper1"></div>
+      <div class="input-stream-mapper input-mapper2"></div>
+      <div class="input-stream-mapper-head1 input-mapper2"></div>
+      <div class="input-stream-mapper-head2 input-mapper2"></div>
+      <div class="input-stream-mapper input-mapper3"></div>
+      <div class="input-stream-mapper-head1 input-mapper3"></div>
+      <div class="input-stream-mapper-head2 input-mapper3"></div>
+      <div class="input-stream-mapper input-mapper4"></div>
+      <div class="input-stream-mapper-head1 input-mapper4"></div>
+      <div class="input-stream-mapper-head2 input-mapper4"></div>
+      <div class="output-stream-mapper output-mapper1"></div>
+      <div class="output-stream-mapper-head1 output-mapper1"></div>
+      <div class="output-stream-mapper-head2 output-mapper1"></div>
+      <div class="output-stream-mapper output-mapper4"></div>
+      <div class="output-stream-mapper-head1 output-mapper4"></div>
+      <div class="output-stream-mapper-head2 output-mapper4"></div>
+    </div>
+    <div class="stream">
+      <div class="stream-arrow"></div>
+      <div class="diagram-stream-item output-stream-item1"></div>
+      <div class="diagram-stream-blip output-stream-blip1 js-output-blip1"></div>
+      <div class="diagram-stream-item output-stream-item4"></div>
+      <div class="diagram-stream-blip output-stream-blip4 js-output-blip4"></div>
+      <div class="diagram-scheduler js-output-scheduler"></div>
+      <div class="stream-arrow-head1"></div>
+      <div class="stream-arrow-head2"></div>
+      <div class="stream-end"></div>
+    </div>
+  </div>
+
+  <script>
+    restartBlip = function (blipSelector) {
+      var elm = document.querySelector(blipSelector);
+      var newone = elm.cloneNode(true);
+      elm.parentNode.replaceChild(newone, elm);
+    };
+
+    setInterval(function () {
+      restartBlip('.js-input-blip1');
+      restartBlip('.js-input-blip2');
+      restartBlip('.js-input-blip3');
+      restartBlip('.js-input-blip4');
+      restartBlip('.js-input-scheduler');
+      restartBlip('.js-output-blip1');
+      restartBlip('.js-output-blip4');
+      restartBlip('.js-output-scheduler');
+    }, 3000);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Reactive Applications with Angular, RxJS and Socket.IO</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/gists.css">
+	<link rel="stylesheet" href="css/theme/simple.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/github.min.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<style>
+	#diagram {
+		width: 1000px;
+		height: 300px;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="title" data-background-color="#000" data-background-image="lib/images/reactivex_bg.jpg" data-background-size="100%">
+				<h3>Reactive Applications</h3>
+				<h4>with</h4>
+				<h3>Angular, RxJS</h3>
+				<h3>and Socket.IO</h3>
+				<br>
+				<p>@mikegeyser</p>
+				<p>GDG Johannesburg - June 2017</p>
+			</section>
+			<section id="introduction">
+				<div id="mike"></div>
+				<div id="bbd" class="fragment"></div>
+				<div id="geocities" class="fragment"></div>
+				<div id="languages" class="fragment"></div>
+				<div id="love-js" class="fragment"></div>
+				<div id="programmer-beard" class="fragment"></div>
+				<div id="frameworks" class="fragment"></div>
+			</section>
+			<section data-background-color="#000" data-background-image="lib/images/disco.jpg" data-background-size="100%">
+				<section>
+					<h1 style="text-align:left">Request</h1>
+					<h1 style="text-align:right">Response</h1>
+				</section>
+				<section>
+					<img src="lib/images/john_travolta.gif" style="border:0; box-shadow: none; background: none;">
+				</section>
+			</section>
+			<section data-background-color="#000" data-background-iframe="code-rain.html">
+				<section id="streams">
+					<h1>Streams</h1>
+				</section>
+				<section>Data-over-time</section>
+				<section>Hardware / File IO / Direct socket</section>
+			</section>
+			<section>
+				<section>
+					<h2>Reactive</h2>
+				</section>
+				<section>
+					<iframe id="diagram" src="diagrams/marble.html" frameborder="0"></iframe>
+				</section>
+			</section>
+			<section>
+				<img src="lib/images/angular.svg" alt="" style="border:0; box-shadow: none;" height="550">
+			</section>
+			<section>
+				<img src="lib/images/typescript-logo.png" alt="" style="border:0; box-shadow: none;" height="400">
+			</section>
+			<section>
+				<img src="lib/images/firebase.png" alt="" style="border:0; box-shadow: none;" height="500">
+			</section>
+			<section>
+				<img src="lib/images/vs_code.png" alt="" style="border:0; box-shadow: none;" height="450">
+			</section>
+			<section>
+				<img src="lib/images/terminal.png" alt="" style="border:0; box-shadow: none;" height="450">
+			</section>
+			<section>
+				<img src="lib/images/todomvc.svg" alt="" style="border:0; box-shadow: none;" height="150">
+			</section>
+
+			<section>
+				<div style="width: 1000px;">
+					<img src="lib/images/typing-1.gif" alt="" style="border:0; box-shadow: none; float: left; margin: 0; height: 220px;">
+					<img src="lib/images/typing-2.gif" alt="" style="border:0; box-shadow: none; float: left; margin: 0; height: 220px;">
+					<img src="lib/images/typing-3.gif" alt="" style="border:0; box-shadow: none; float: left; margin: 0; height: 220px;">
+					<img src="lib/images/typing-4.gif" alt="" style="border:0; box-shadow: none; float: left; margin: 0; height: 220px; width: 369px;">
+					<img src="lib/images/typing-5.gif" alt="" style="border:0; box-shadow: none; float: left; margin: 0; height: 220px;">
+					<img src="lib/images/typing-6.gif" alt="" style="border:0; box-shadow: none; float: left; margin: 0; height: 220px;">
+				</div>
+			</section>
+
+			<section>
+				<h4>https://github.com/mikegeyser/building-and-deploying-angular-applications</h4>
+				<br>
+				<h4>https://git.io/vHnnK</h4>
+			</section>
+			<section>
+				<h3>Questions?</h3>
+				<h4><i id="twitter"></i>@mikegeyser</h4>
+				<h4><i id="bbd-email"></i>michaelg@bbd.co.za</h4>
+				<h4><i id="github"></i>github.com/mikegeyser</h4>
+				<h4><i id="slack"></i>zatech.co.za</h4>
+			</section>
+		</div>
+		<img id="bbd-logo" src="lib/images/bbd.png" />
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [{
+				src: 'plugin/markdown/marked.js'
+			}, {
+				src: 'plugin/markdown/markdown.js'
+			}, {
+				src: 'plugin/notes/notes.js',
+				async: true
+			}, {
+				src: 'plugin/highlight/highlight.js',
+				async: true,
+				callback: function () {
+					hljs.initHighlightingOnLoad();
+				}
+			}]
+		});
+
+		
+
+	</script>
+</body>
+
+</html>

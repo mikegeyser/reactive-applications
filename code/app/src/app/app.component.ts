@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { StreamService } from './stream.service';
 
-declare let io: any;
+declare let Masonry: any;
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent implements OnInit {
+  constructor(public stream: StreamService) { }
 
-  constructor() {
-    let socket = io('http://localhost:3000/');
-    socket.on('ping', (ping) => console.log(ping));
+  ngOnInit() {
+    var masonry = new Masonry('app-root', {
+      itemSelector: '.EmbeddedTweet'
+    });
+
+    this.stream.tweets.debounceTime(1).subscribe(x => {
+      masonry.reloadItems();
+      masonry.layout();
+    });
   }
 }

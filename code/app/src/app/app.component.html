@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<app-pulse></app-pulse>
+
+<!--<div *ngFor="let tweet of stream.tweets | async">
+  {{tweet.text}}
+</div>-->
+
+<app-tweet *ngFor="let tweet of stream.tweets | async" [tweet]="tweet">
+</app-tweet>

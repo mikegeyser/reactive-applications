@@ -1,0 +1,25 @@
+<div class="EmbeddedTweet">
+  <div class="EmbeddedTweet-tweet">
+    <blockquote class="Tweet">
+      <div class="Tweet-header">
+        <div class="TweetAuthor">
+          <span class="TweetAuthor-link Identity" href="">
+            <span class="TweetAuthor-avatar Identity-avatar">
+              <img class="Avatar" alt="" src="{{ tweet.user.profile_image_url }}">
+            </span>
+          <span class="TweetAuthor-name Identity-name">{{ tweet.user.name }}</span>
+          <span class="TweetAuthor-screenName Identity-screenName">@{{tweet.user.screen_name }}</span>
+          </span>
+        </div>
+      </div>
+      <div class="Tweet-body">
+        <p class="Tweet-text">{{ tweet.text }}</p>
+        <div class="Tweet-metadata dateline">
+          <span class="long-permalink" href="">
+            <time>{{ tweet.created_at | date: 'short'}}</time>
+          </span>
+        </div>
+      </div>
+    </blockquote>
+  </div>
+</div>

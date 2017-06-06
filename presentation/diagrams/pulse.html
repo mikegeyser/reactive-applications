@@ -1,0 +1,402 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="marble.css">
+
+  <style>
+    .diagram .setTimeout-stream-item1 {
+      background-color: #592D89;
+      left: 10%
+    }
+
+    .diagram .setTimeout-stream-item2 {
+      background-color: #3c71c4;
+      left: 30%
+    }
+
+    .diagram .setTimeout-stream-item3 {
+      background-color: #20993c;
+      left: 50%
+    }
+
+    .diagram .setTimeout-stream-item4 {
+      background-color: #26de5a;
+      left: 70%
+    }
+
+    .diagram .setTimeout-stream-blip1 {
+      background-color: #592D89;
+      left: 10%;
+      -webkit-animation: blip 600ms ease-out 150ms;
+      -moz-animation: blip 600ms ease-out 150ms;
+      -o-animation: blip 600ms ease-out 150ms;
+      animation: blip 600ms ease-out 150ms
+    }
+
+    .diagram .setTimeout-stream-blip2 {
+      background-color: #3c71c4;
+      left: 30%;
+      -webkit-animation: blip 600ms ease-out 470ms;
+      -moz-animation: blip 600ms ease-out 470ms;
+      -o-animation: blip 600ms ease-out 470ms;
+      animation: blip 600ms ease-out 470ms
+    }
+
+    .diagram .setTimeout-stream-blip3 {
+      background-color: #20993c;
+      left: 50%;
+      -webkit-animation: blip 600ms ease-out 550ms;
+      -moz-animation: blip 600ms ease-out 550ms;
+      -o-animation: blip 600ms ease-out 550ms;
+      animation: blip 600ms ease-out 550ms
+    }
+
+    .diagram .setTimeout-stream-blip4 {
+      background-color: #26de5a;
+      left: 70%;
+      -webkit-animation: blip 600ms ease-out 600ms;
+      -moz-animation: blip 600ms ease-out 600ms;
+      -o-animation: blip 600ms ease-out 600ms;
+      animation: blip 600ms ease-out 600ms
+    }
+
+    .diagram .setTimeout-mapper1 {
+      left: 10%
+    }
+
+    .diagram .setTimeout-mapper2 {
+      left: 30%
+    }
+
+    .diagram .setTimeout-mapper3 {
+      left: 50%
+    }
+
+    .diagram .setTimeout-mapper4 {
+      left: 70%
+    }
+
+    .diagram .socket-mapper1 {
+      left: 20%
+    }
+
+    .diagram .socket-mapper2 {
+      left: 40%
+    }
+
+    .diagram .socket-mapper3 {
+      left: 60%
+    }
+
+    .diagram .socket-mapper4 {
+      left: 80%
+    }
+
+    .diagram .service-stream-item1 {
+      background-color: #592D89;
+      left: 20%
+    }
+
+    .diagram .service-stream-item2 {
+      background-color: #3c71c4;
+      left: 40%
+    }
+
+    .diagram .service-stream-item3 {
+      background-color: #20993c;
+      left: 60%
+    }
+
+    .diagram .service-stream-item4 {
+      background-color: #26de5a;
+      left: 80%
+    }
+
+    .diagram .service-stream-blip1 {
+      background-color: #592D89;
+      left: 20%;
+      -webkit-animation: blip 600ms ease-out 150ms;
+      -moz-animation: blip 600ms ease-out 150ms;
+      -o-animation: blip 600ms ease-out 150ms;
+      animation: blip 600ms ease-out 150ms
+    }
+
+    .diagram .service-stream-blip2 {
+      background-color: #3c71c4;
+      left: 40%;
+      -webkit-animation: blip 600ms ease-out 470ms;
+      -moz-animation: blip 600ms ease-out 470ms;
+      -o-animation: blip 600ms ease-out 470ms;
+      animation: blip 600ms ease-out 470ms
+    }
+
+    .diagram .service-stream-blip3 {
+      background-color: #20993c;
+      left: 60%;
+      -webkit-animation: blip 600ms ease-out 550ms;
+      -moz-animation: blip 600ms ease-out 550ms;
+      -o-animation: blip 600ms ease-out 550ms;
+      animation: blip 600ms ease-out 550ms
+    }
+
+    .diagram .service-stream-blip4 {
+      background-color: #26de5a;
+      left: 80%;
+      -webkit-animation: blip 600ms ease-out 600ms;
+      -moz-animation: blip 600ms ease-out 600ms;
+      -o-animation: blip 600ms ease-out 600ms;
+      animation: blip 600ms ease-out 600ms
+    }
+
+    .diagram .output-mapper1 {
+      left: 20%
+    }
+
+    .diagram .output-mapper2 {
+      left: 40%
+    }
+
+    .diagram .output-mapper3 {
+      left: 60%
+    }
+
+    .diagram .output-mapper4 {
+      left: 80%
+    }
+
+    .diagram .output-stream-item1 {
+      background-color: #592D89;
+      left: 20%
+    }
+
+    .diagram .output-stream-item4 {
+      background-color: #26de5a;
+      left: 80%
+    }
+
+    .diagram .output-stream-blip1 {
+      background-color: #592D89;
+      left: 35%;
+      -webkit-animation: blip 600ms ease-out 350ms;
+      -moz-animation: blip 600ms ease-out 350ms;
+      -o-animation: blip 600ms ease-out 350ms;
+      animation: blip 600ms ease-out 350ms
+    }
+
+    .diagram .output-stream-blip4 {
+      background-color: #26de5a;
+      left: 80%;
+      -webkit-animation: blip 600ms ease-out 800ms;
+      -moz-animation: blip 600ms ease-out 800ms;
+      -o-animation: blip 600ms ease-out 800ms;
+      animation: blip 600ms ease-out 800ms
+    }
+
+    .diagram .operator {
+      height: 42px;
+      width: 100%;
+      text-align: center;
+      font-family: "Signika", Helvetica, sans-serif;
+      font-size: 1.4rem;
+      border: 1px solid #777;
+      line-height: 42px;
+      margin-top: 35px;
+      margin-bottom: 35px;
+      position: relative;
+      overflow: visible
+    }
+
+    .diagram .operator * {
+      position: absolute
+    }
+
+    .diagram .operator .setTimeout-stream-mapper {
+      width: 1px;
+      height: 49px;
+      border-left: 1px dashed #777;
+      top: -49px;
+      margin-left: -0.5px
+    }
+
+    .diagram .operator .setTimeout-stream-mapper-head1 {
+      width: 14px;
+      height: 1px;
+      top: 0;
+      margin-top: -8px;
+      margin-left: -4.5px;
+      background-color: #777;
+      transform: rotate(-0.2turn)
+    }
+
+    .diagram .operator .setTimeout-stream-mapper-head2 {
+      width: 14px;
+      height: 1px;
+      top: 0;
+      margin-top: -8px;
+      margin-left: -9.5px;
+      background-color: #777;
+      transform: rotate(.2turn)
+    }
+
+    .diagram .operator .output-stream-mapper {
+      width: 1px;
+      height: 49px;
+      border-left: 1px dashed #777;
+      top: 42px
+    }
+
+    .diagram .operator .output-stream-mapper-head1 {
+      width: 14px;
+      height: 1px;
+      top: 91px;
+      margin-top: -8px;
+      margin-left: -3.5px;
+      background-color: #777;
+      transform: rotate(-0.2turn)
+    }
+
+    .diagram .operator .output-stream-mapper-head2 {
+      width: 14px;
+      height: 1px;
+      top: 91px;
+      margin-top: -8px;
+      margin-left: -9.1px;
+      background-color: #777;
+      transform: rotate(.2turn)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="diagram">
+    <div class="stream">setTimeout
+      <div class="stream-arrow"></div>
+      <div class="diagram-stream-item setTimeout-stream-item1"></div>
+      <div class="diagram-stream-blip setTimeout-stream-blip1 js-setTimeout-blip1"></div>
+      <div class="diagram-stream-item setTimeout-stream-item2"></div>
+      <div class="diagram-stream-blip setTimeout-stream-blip2 js-setTimeout-blip2"></div>
+      <div class="diagram-stream-item setTimeout-stream-item3"></div>
+      <div class="diagram-stream-blip setTimeout-stream-blip3 js-setTimeout-blip3"></div>
+      <div class="diagram-stream-item setTimeout-stream-item4"></div>
+      <div class="diagram-stream-blip setTimeout-stream-blip4 js-setTimeout-blip4"></div>
+      <div class="diagram-scheduler js-setTimeout-scheduler"></div>
+      <div class="stream-arrow-head1"></div>
+      <div class="stream-arrow-head2"></div>
+      <div class="stream-end"></div>
+    </div>
+    <div class="operator">
+      Socket.IO
+      <div class="setTimeout-stream-mapper setTimeout-mapper1"></div>
+      <div class="setTimeout-stream-mapper-head1 setTimeout-mapper1"></div>
+      <div class="setTimeout-stream-mapper-head2 setTimeout-mapper1"></div>
+      <div class="setTimeout-stream-mapper setTimeout-mapper2"></div>
+      <div class="setTimeout-stream-mapper-head1 setTimeout-mapper2"></div>
+      <div class="setTimeout-stream-mapper-head2 setTimeout-mapper2"></div>
+      <div class="setTimeout-stream-mapper setTimeout-mapper3"></div>
+      <div class="setTimeout-stream-mapper-head1 setTimeout-mapper3"></div>
+      <div class="setTimeout-stream-mapper-head2 setTimeout-mapper3"></div>
+      <div class="setTimeout-stream-mapper setTimeout-mapper4"></div>
+      <div class="setTimeout-stream-mapper-head1 setTimeout-mapper4"></div>
+      <div class="setTimeout-stream-mapper-head2 setTimeout-mapper4"></div>
+      <div class="output-stream-mapper socket-mapper1"></div>
+      <div class="output-stream-mapper-head1 socket-mapper1"></div>
+      <div class="output-stream-mapper-head2 socket-mapper1"></div>
+      <div class="output-stream-mapper socket-mapper2"></div>
+      <div class="output-stream-mapper-head1 socket-mapper2"></div>
+      <div class="output-stream-mapper-head2 socket-mapper2"></div>
+      <div class="output-stream-mapper socket-mapper3"></div>
+      <div class="output-stream-mapper-head1 socket-mapper3"></div>
+      <div class="output-stream-mapper-head2 socket-mapper3"></div>
+      <div class="output-stream-mapper socket-mapper4"></div>
+      <div class="output-stream-mapper-head1 socket-mapper4"></div>
+      <div class="output-stream-mapper-head2 socket-mapper4"></div>
+    </div>
+    <div class="stream">StreamService.ping
+      <div class="stream-arrow"></div>
+      <div class="diagram-stream-item service-stream-item1"></div>
+      <div class="diagram-stream-blip service-stream-blip1 js-service-blip1"></div>
+      <div class="diagram-stream-item service-stream-item2"></div>
+      <div class="diagram-stream-blip service-stream-blip2 js-service-blip2"></div>
+      <div class="diagram-stream-item service-stream-item3"></div>
+      <div class="diagram-stream-blip service-stream-blip3 js-service-blip3"></div>
+      <div class="diagram-stream-item service-stream-item4"></div>
+      <div class="diagram-stream-blip service-stream-blip4 js-service-blip4"></div>
+      <div class="diagram-scheduler js-service-scheduler"></div>
+      <div class="stream-arrow-head1"></div>
+      <div class="stream-arrow-head2"></div>
+      <div class="stream-end"></div>
+    </div>
+    <div class="operator">
+      BehaviorSubject
+      <div class="setTimeout-stream-mapper setTimeout-mapper1"></div>
+      <div class="setTimeout-stream-mapper-head1 setTimeout-mapper1"></div>
+      <div class="setTimeout-stream-mapper-head2 setTimeout-mapper1"></div>
+      <div class="setTimeout-stream-mapper setTimeout-mapper2"></div>
+      <div class="setTimeout-stream-mapper-head1 setTimeout-mapper2"></div>
+      <div class="setTimeout-stream-mapper-head2 setTimeout-mapper2"></div>
+      <div class="setTimeout-stream-mapper setTimeout-mapper3"></div>
+      <div class="setTimeout-stream-mapper-head1 setTimeout-mapper3"></div>
+      <div class="setTimeout-stream-mapper-head2 setTimeout-mapper3"></div>
+      <div class="setTimeout-stream-mapper setTimeout-mapper4"></div>
+      <div class="setTimeout-stream-mapper-head1 setTimeout-mapper4"></div>
+      <div class="setTimeout-stream-mapper-head2 setTimeout-mapper4"></div>
+      <div class="output-stream-mapper socket-mapper1"></div>
+      <div class="output-stream-mapper-head1 socket-mapper1"></div>
+      <div class="output-stream-mapper-head2 socket-mapper1"></div>
+      <div class="output-stream-mapper socket-mapper2"></div>
+      <div class="output-stream-mapper-head1 socket-mapper2"></div>
+      <div class="output-stream-mapper-head2 socket-mapper2"></div>
+      <div class="output-stream-mapper socket-mapper3"></div>
+      <div class="output-stream-mapper-head1 socket-mapper3"></div>
+      <div class="output-stream-mapper-head2 socket-mapper3"></div>
+      <div class="output-stream-mapper socket-mapper4"></div>
+      <div class="output-stream-mapper-head1 socket-mapper4"></div>
+      <div class="output-stream-mapper-head2 socket-mapper4"></div>
+    </div>
+    <div class="stream">
+      <div class="stream-arrow"></div>
+      <div class="diagram-stream-item output-stream-item1"></div>
+      <div class="diagram-stream-blip output-stream-blip1 js-output-blip1"></div>
+      <div class="diagram-stream-item output-stream-item2"></div>
+      <div class="diagram-stream-blip output-stream-blip2 js-output-blip2"></div>
+      <div class="diagram-stream-item output-stream-item3"></div>
+      <div class="diagram-stream-blip output-stream-blip3 js-output-blip3"></div>
+      <div class="diagram-stream-item output-stream-item4"></div>
+      <div class="diagram-stream-blip output-stream-blip4 js-output-blip4"></div>
+      <div class="diagram-scheduler js-output-scheduler"></div>
+      <div class="stream-arrow-head1"></div>
+      <div class="stream-arrow-head2"></div>
+      <div class="stream-arrow-head3"></div>
+      <div class="stream-arrow-head4"></div>
+      <div class="stream-end"></div>
+    </div>
+  </div>
+
+  <script>
+    restartBlip = function (blipSelector) {
+      var elm = document.querySelector(blipSelector);
+      var newone = elm.cloneNode(true);
+      elm.parentNode.replaceChild(newone, elm);
+    };
+
+    setInterval(function () {
+      restartBlip('.js-setTimeout-blip1');
+      restartBlip('.js-setTimeout-blip2');
+      restartBlip('.js-setTimeout-blip3');
+      restartBlip('.js-setTimeout-blip4');
+      restartBlip('.js-setTimeout-scheduler');
+
+      restartBlip('.js-service-blip1');
+      restartBlip('.js-service-blip2');
+      restartBlip('.js-service-blip3');
+      restartBlip('.js-service-blip4');
+      restartBlip('.js-service-scheduler');
+
+      restartBlip('.js-output-blip1');
+      restartBlip('.js-output-blip4');
+      restartBlip('.js-output-scheduler');
+    }, 3000);
+  </script>
+</body>
+
+</html>
