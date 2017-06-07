@@ -1,0 +1,97 @@
+{
+	/*
+	// Place your snippets for JavaScript here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+*/
+	"Initialise express": {
+		"prefix": "gdg_express",
+		"body": [
+			"var app = require('express')();",
+			"var server = require('http').createServer(app);",
+			"var io = require('socket.io')(server);",
+			"",
+			"server.listen(3000);"
+		],
+		"description": "Initialise the express application"
+	},
+	"Set the ping": {
+		"prefix": "gdg_ping",
+		"body": [
+			"setInterval(() => io.emit('ping'), 3000);"
+		],
+		"description": "Set the socketio ping"
+	},
+	"Configure the twitter api": {
+		"prefix": "gdg_twitter_config",
+		"body": [
+			"let Twit = require('twit');",
+			"let T = new Twit({",
+			"  'consumer_key': 'IANgkT1nd56vRlM6Qqu3Oxn2C',",
+			"  'consumer_secret': 'VyfZzl9YAAdNqHj12PRk1oX8EZXWnA58RIxjG2E1NOzhrERkPb',",
+			"  'access_token': '29650035-O1mGOswJj3XeEsveSc8QW3Lz6mmYGvWWbZmPeAgXq',",
+			"  'access_token_secret': 'k79NwcMe1qzLBOXbyFLwo4373lI0KLKSBzoshhK5V8IOr',",
+			"  'timeout_ms': 60000",
+			"});"
+		],
+		"description": "Configure the twitter api"
+	},
+	"Set up the twitter stream": {
+		"prefix": "gdg_twitter_stream",
+		"body": [
+			"let stream = T.stream('statuses/filter', {",
+			"  track: [",
+			"    '@googledevs',",
+			"    '@GDEJohannesburg',",
+			"    '@mikegeyser'",
+			"  ].join(','),",
+			"  language: 'en'",
+			"});"
+		],
+		"description": "Set up the twitter stream"
+	},
+	"Emit received tweets": {
+		"prefix": "gdg_tweet_emit",
+		"body": [
+			"stream.on('tweet', (status) => {",
+			"  console.log(status);",
+			"  io.emit('tweet', status);",
+			"});"
+		],
+		"description": "Emit received tweets"
+	},
+	"Store the tweet in an array": {
+		"prefix": "gdg_tweet_store",
+		"body": [
+			"let tweets = [];",
+			"stream.on('tweet', (status) => {",
+			"  console.log(status);",
+			"    tweets.unshift(status);",
+			"    ",
+			"    if (tweets.length > 100)",
+			"      tweets.splice(100);",
+			"  io.emit('tweet', status);",
+			"});"
+		],
+		"description": "Store the tweet in an array"
+	},
+	"Get all tweets so far": {
+		"prefix": "gdg_get_all",
+		"body": [
+			"var cors = require('cors');",
+			"app.use(cors())",
+			"app.get('/tweets', (request, response) => response.send(tweets));"
+		],
+		"description": "Get all tweets so far"
+	}
+}
