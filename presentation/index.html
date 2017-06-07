@@ -24,10 +24,60 @@
 	</script>
 
 	<style>
-	#diagram {
-		width: 1000px;
-		height: 300px;
-	}
+		#diagram {
+			width: 1000px;
+			height: 350px;
+		}
+
+		#languages {
+			position: absolute;
+			right: 50px;
+			top: 60px;
+			background: url(../lib/images/languages.png) no-repeat;
+			width: 348px;
+			height: 214px;
+			background-size: contain;
+		}
+
+		#love-js {
+			position: absolute;
+			right: 50px;
+			top: 100px;
+			background: url(../lib/images/love-js.png) no-repeat;
+			width: 348px;
+			height: 139px;
+			background-size: contain;
+			transform: rotate(-25deg);
+		}
+
+		#frameworks {
+			position: absolute;
+			right: 135px;
+			bottom: 75px;
+			background: url(../lib/images/frameworks.png) no-repeat;
+			width: 400px;
+			height: 200px;
+			background-size: contain;
+		}
+
+		#jozijs {
+			position: absolute;
+			right: 135px;
+			top: 315px;
+			background: url(../lib/images/jozijs.png) no-repeat;
+			width: 400px;
+			height: 200px;
+			background-size: contain;
+		}
+
+		#jozijs-small {
+			background: url(../lib/images/meetup.png) no-repeat;
+			margin: 0 5px -3px 0;
+			background-size: contain;
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+		}
 	</style>
 </head>
 
@@ -50,6 +100,7 @@
 				<div id="languages" class="fragment"></div>
 				<div id="love-js" class="fragment"></div>
 				<div id="programmer-beard" class="fragment"></div>
+				<div id="jozijs" class="fragment"></div>
 				<div id="frameworks" class="fragment"></div>
 			</section>
 			<section data-background-color="#000" data-background-image="lib/images/disco.jpg" data-background-size="100%">
@@ -61,38 +112,31 @@
 					<img src="lib/images/john_travolta.gif" style="border:0; box-shadow: none; background: none;">
 				</section>
 			</section>
-			<section data-background-color="#000" data-background-iframe="code-rain.html">
-				<section id="streams">
-					<h1>Streams</h1>
-				</section>
-				<section>Data-over-time</section>
-				<section>Hardware / File IO / Direct socket</section>
+			<section id="streams" data-background-color="#000" data-background-iframe="code-rain.html">
+				<h1>Streams</h1>
+			</section>
+			<section data-background-color="#000" data-background-image="lib/images/reactivex_bg.jpg" data-background-size="100%">
+				<h1>Reactive</h1>
 			</section>
 			<section>
 				<section>
-					<h2>Reactive</h2>
+					<iframe id="diagram" src="diagrams/requestresponse.html" frameborder="0"></iframe>
+				</section>
+				<section>
+					<iframe id="diagram" src="diagrams/stream.html" frameborder="0"></iframe>
 				</section>
 				<section>
 					<iframe id="diagram" src="diagrams/marble.html" frameborder="0"></iframe>
 				</section>
 			</section>
 			<section>
+				<img src="lib/images/rxjs.svg" alt="" style="border:0; box-shadow: none;" height="450">
+			</section>
+			<section>
+				<img src="lib/images/socketio.png" alt="" style="border:0; box-shadow: none;" height="450">
+			</section>
+			<section>
 				<img src="lib/images/angular.svg" alt="" style="border:0; box-shadow: none;" height="550">
-			</section>
-			<section>
-				<img src="lib/images/typescript-logo.png" alt="" style="border:0; box-shadow: none;" height="400">
-			</section>
-			<section>
-				<img src="lib/images/firebase.png" alt="" style="border:0; box-shadow: none;" height="500">
-			</section>
-			<section>
-				<img src="lib/images/vs_code.png" alt="" style="border:0; box-shadow: none;" height="450">
-			</section>
-			<section>
-				<img src="lib/images/terminal.png" alt="" style="border:0; box-shadow: none;" height="450">
-			</section>
-			<section>
-				<img src="lib/images/todomvc.svg" alt="" style="border:0; box-shadow: none;" height="150">
 			</section>
 
 			<section>
@@ -105,18 +149,13 @@
 					<img src="lib/images/typing-6.gif" alt="" style="border:0; box-shadow: none; float: left; margin: 0; height: 220px;">
 				</div>
 			</section>
-
-			<section>
-				<h4>https://github.com/mikegeyser/building-and-deploying-angular-applications</h4>
-				<br>
-				<h4>https://git.io/vHnnK</h4>
-			</section>
 			<section>
 				<h3>Questions?</h3>
 				<h4><i id="twitter"></i>@mikegeyser</h4>
 				<h4><i id="bbd-email"></i>michaelg@bbd.co.za</h4>
 				<h4><i id="github"></i>github.com/mikegeyser</h4>
 				<h4><i id="slack"></i>zatech.co.za</h4>
+				<h4><i id="jozijs-small"></i>meetup.com/Jozi-JS</h4>
 			</section>
 		</div>
 		<img id="bbd-logo" src="lib/images/bbd.png" />
@@ -146,9 +185,6 @@
 				}
 			}]
 		});
-
-		
-
 	</script>
 </body>
 

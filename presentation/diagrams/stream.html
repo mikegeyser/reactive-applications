@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="marble.css">
+
+  <style>
+    .reverse {
+      margin-top: 70px;
+      moz-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+
+    .diagram .stream .diagram-scheduler {
+      animation: scheduler 800ms linear 0ms !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="diagram">
+    <div class="stream">
+      <div class="stream-arrow"></div>
+      <div class="diagram-scheduler js-input-scheduler"></div>
+      <div class="stream-arrow-head1"></div>
+      <div class="stream-arrow-head2"></div>
+    </div>
+    <label>Input stream</label>
+    <div class="stream reverse">
+      <div class="stream-arrow"></div>
+      <div class="diagram-scheduler js-output-scheduler"></div>
+      <div class="stream-arrow-head1"></div>
+      <div class="stream-arrow-head2"></div>
+    </div>
+    <label>Output stream</label>
+  </div>
+
+  <script>
+    restartBlip = function (blipSelector) {
+      var elm = document.querySelector(blipSelector);
+      var newone = elm.cloneNode(true);
+      elm.parentNode.replaceChild(newone, elm);
+    };
+
+    setInterval(function () {
+      restartBlip('.js-input-scheduler');
+      restartBlip('.js-output-scheduler');
+    }, 800);
+  </script>
+</body>
+
+</html>
